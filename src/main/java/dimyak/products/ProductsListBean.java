@@ -1,6 +1,9 @@
 package dimyak.products;
 
-import javax.annotation.PostConstruct;
+import dimyak.products.domain.ProductEntity;
+
+
+import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import java.io.Serializable;
@@ -10,44 +13,28 @@ import java.util.List;
 @Named
 @SessionScoped
 public class ProductsListBean implements Serializable {
-    private List<Product> products = new ArrayList<Product>();
+    @EJB
+    private ProductsManagerBean productsManagerBean;
     private Product newProduct= new Product();
 
-    @PostConstruct
-    private void initialize(){
-        Product product;
-
-        product= new Product();
-        product.setId("id");
-        product.setName("Food");
-        product.setPrice(100);
-        products.add(product);
-
-
-        product= new Product();
-        product.setId("id");
-        product.setName("Computer");
-        product.setPrice(10000);
-        products.add(product);
-
-
-        product= new Product();
-        product.setId("id");
-        product.setName("Telephone");
-        product.setPrice(5000);
-        products.add(product);
-    }
 
     public Product getNewProduct(){
         return newProduct;
     }
 
     public List<Product> getProducts(){
-        return products;
+        List<Product> result = new ArrayList<Product>();
+        List<ProductEntity> entities = productsManagerBean.readList(0,100);
+        for(ProductEntity entity : entities){
+            result.add(entity.toDto());
+        }
+        return result;
     }
 
     public void createNewProduct(){
-        products.add(newProduct);
+        ProductEntity entity= new ProductEntity();
+        entity.fromDto(newProduct);
+        productsManagerBean.create(entity);
         newProduct = new Product();
     }
 }
