@@ -5,22 +5,15 @@
   Date: 12.07.2018
   Time: 21:11
 -->
-<!DOCTYPE html
-        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="WEB-INF/template.xhtml">
 
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+    <ui:define name="page_title">
+        Page Title
+    </ui:define>
 
-<h:head>
-    <title>Title</title>
-</h:head>
+    <ui:define name="page_body">
+       Index Page Body
+    </ui:define>
 
-<h:body>
-    <h:form>
-        <h:inputText value="#{firstBean.name}" />
-        <h:commandButton value="OK"/>
-    </h:form>
-</h:body>
-
-</html>
+</ui:composition>

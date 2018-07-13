@@ -1,9 +1,12 @@
 package dimyak;
 
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
+import java.io.Serializable;
 
 @Named(value = "firstBean")
-public class ExampleBean {
+@SessionScoped
+public class ExampleBean implements Serializable {
 
     private String name;
 
