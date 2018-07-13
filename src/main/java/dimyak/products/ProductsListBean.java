@@ -11,6 +11,7 @@ import java.util.List;
 @SessionScoped
 public class ProductsListBean implements Serializable {
     private List<Product> products = new ArrayList<Product>();
+    private Product newProduct= new Product();
 
     @PostConstruct
     private void initialize(){
@@ -37,7 +38,16 @@ public class ProductsListBean implements Serializable {
         products.add(product);
     }
 
+    public Product getNewProduct(){
+        return newProduct;
+    }
+
     public List<Product> getProducts(){
         return products;
+    }
+
+    public void createNewProduct(){
+        products.add(newProduct);
+        newProduct = new Product();
     }
 }

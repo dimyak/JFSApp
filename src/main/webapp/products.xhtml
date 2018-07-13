@@ -14,7 +14,21 @@
     </ui:define>
 
     <ui:define name="page_body">
-        <p:dataTable value="#{productsListBean.products}" var="product">
+        <h:form>
+        <p:panel >
+            <h:outputText value="ID: "/>
+            <h:inputText value="#{productsListBean.newProduct.id}"/>
+
+            <h:outputText value="Name: "/>
+            <h:inputText value="#{productsListBean.newProduct.name}"/>
+
+            <h:outputText value="Price: "/>
+            <h:inputText value="#{productsListBean.newProduct.price}"/>
+
+            <p:commandButton value="Add" action="#{productsListBean.createNewProduct}" update="products_table"/>
+        </p:panel>
+        </h:form>
+        <p:dataTable value="#{productsListBean.products}" var="product" id="products_table">
 
             <p:column >
                 <h:outputText value="#{product.name}"/>
