@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: keshl
+  Date: 13.07.2018
+  Time: 9:49
+-->
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="WEB-INF/template.xhtml">
+
+    <ui:define name="page_title">
+        List Product
+    </ui:define>
+
+    <ui:define name="page_body">
+        <p:dataTable value="#{productsListBean.products}" var="product">
+
+            <p:column >
+                <h:outputText value="#{product.name}"/>
+            </p:column>
+
+            <p:column>
+                <h:outputText value="#{product.price}"/>
+            </p:column>
+
+        </p:dataTable>
+    </ui:define>
+
+</ui:composition>
