@@ -15,6 +15,14 @@
 
     <ui:define name="page_body">
         <h:form>
+
+            <p:dialog id="delete_dialog" widgetVar="delete_dialog">
+                <p:commandButton value="Delete" action="#{productsListBean.deleteProduct}"
+                                 update="products_table"
+                                 oncomplete="PF('delete_dialog').hide();"/>
+                <p:commandButton value="Cancel" onclick="PF('delete_dialog').hide();"/>
+            </p:dialog>
+
         <p:panel >
 
             <h:outputText value="Name: "/>
@@ -37,7 +45,7 @@
             </p:column>
 
             <p:column>
-                <p:commandButton value="Delete" action="#{productsListBean.deleteProduct(product.id)}" update="products_table"/>
+                <p:commandButton value="Delete" action="#{productsListBean.setIdForDelete(product.id)}" oncomplete="PF('delete_dialog').show();"/>
             </p:column>
 
         </p:dataTable>

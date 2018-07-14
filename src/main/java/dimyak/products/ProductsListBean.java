@@ -16,7 +16,15 @@ public class ProductsListBean implements Serializable {
     @EJB
     private ProductsManagerBean productsManagerBean;
     private Product newProduct= new Product();
+    private long idForDelete;
 
+    public long getIdForDelete() {
+        return idForDelete;
+    }
+
+    public void setIdForDelete(long idForDelete) {
+        this.idForDelete = idForDelete;
+    }
 
     public Product getNewProduct(){
         return newProduct;
@@ -38,7 +46,7 @@ public class ProductsListBean implements Serializable {
         newProduct = new Product();
     }
 
-    public void deleteProduct(long id){
-        productsManagerBean.delete(id);
+    public void deleteProduct(){
+        productsManagerBean.delete(idForDelete);
     }
 }

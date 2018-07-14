@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2f65f82-5197-4fb9-af00-a74e823225f2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dimyak/products/ProductsListBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dimyak/products/ProductsListBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/products.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/products.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dimyak/products/ProductsListBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dimyak/products/ProductsListBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jsf-app.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/jsf-app.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jsf-app/WEB-INF/classes/dimyak/products/ProductsListBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/jsf-app/WEB-INF/classes/dimyak/products/ProductsListBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jsf-app/products.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/jsf-app/products.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,10 +32,14 @@
       <file leaf-file-name="ProductsListBean.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/dimyak/products/ProductsListBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
+            <state relative-caret-position="438">
+              <caret line="49" column="46" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#501#502#0" expanded="true" />
+                <element signature="e#535#536#0" expanded="true" />
+                <element signature="e#587#588#0" expanded="true" />
+                <element signature="e#633#634#0" expanded="true" />
                 <element signature="e#1056#1057#0" expanded="true" />
                 <element signature="e#1090#1091#0" expanded="true" />
               </folding>
@@ -52,8 +50,8 @@
       <file leaf-file-name="products.xhtml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/products.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+            <state relative-caret-position="357">
+              <caret line="21" column="75" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="75" />
             </state>
           </provider>
         </entry>
@@ -491,12 +489,12 @@
       <workItem from="1531418137325" duration="3648000" />
       <workItem from="1531459808412" duration="18394000" />
       <workItem from="1531484017841" duration="3482000" />
-      <workItem from="1531554737495" duration="610000" />
+      <workItem from="1531554737495" duration="1719000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26134000" />
+    <option name="totallyTimeSpent" value="27243000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -524,7 +522,7 @@
       <window_info anchor="right" id="JSF" order="3" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.30392158" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.30392158" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32893288" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
@@ -534,7 +532,7 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.3278867" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32893288" />
       <window_info id="Persistence" order="3" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17963752" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17963752" />
       <window_info anchor="right" id="Bean Validation" order="3" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
@@ -570,6 +568,10 @@
           <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#501#502#0" expanded="true" />
+            <element signature="e#535#536#0" expanded="true" />
+            <element signature="e#587#588#0" expanded="true" />
+            <element signature="e#633#634#0" expanded="true" />
             <element signature="e#1056#1057#0" expanded="true" />
             <element signature="e#1090#1091#0" expanded="true" />
           </folding>
@@ -647,6 +649,10 @@
           <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#501#502#0" expanded="true" />
+            <element signature="e#535#536#0" expanded="true" />
+            <element signature="e#587#588#0" expanded="true" />
+            <element signature="e#633#634#0" expanded="true" />
             <element signature="e#1056#1057#0" expanded="true" />
             <element signature="e#1090#1091#0" expanded="true" />
           </folding>
@@ -852,10 +858,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dimyak/products/ProductsListBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
+        <state relative-caret-position="438">
+          <caret line="49" column="46" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#501#502#0" expanded="true" />
+            <element signature="e#535#536#0" expanded="true" />
+            <element signature="e#587#588#0" expanded="true" />
+            <element signature="e#633#634#0" expanded="true" />
             <element signature="e#1056#1057#0" expanded="true" />
             <element signature="e#1090#1091#0" expanded="true" />
           </folding>
@@ -864,8 +874,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/products.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+        <state relative-caret-position="357">
+          <caret line="21" column="75" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="75" />
         </state>
       </provider>
     </entry>
