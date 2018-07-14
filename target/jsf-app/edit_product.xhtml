@@ -1,0 +1,25 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="WEB-INF/template.xhtml">
+
+<ui:define name="page_title">Edit product</ui:define>
+
+<ui:define name="page_body">
+    <h:form>
+   <p:panel>
+        <p:panel>
+            <h:outputLabel for="product_name" value="Name: "/>
+            <h:inputText id="product_name" value="#{productsListBean.editingProduct.name}" />
+            <br/>
+            <h:outputLabel for="product_price" value="Price: "/>
+            <h:inputText id="product_price" value="#{productsListBean.editingProduct.price}" />
+        </p:panel>
+        <p:commandButton value="Edit" action="#{productsListBean.saveProduct}"
+                         oncomplete="window.location = 'products.xhtml'"/>
+        <p:commandButton value="Cancel" onclick="window.location = 'products.xhtml'"/>
+    </p:panel>
+    </h:form>
+</ui:define>
+
+</ui:composition>

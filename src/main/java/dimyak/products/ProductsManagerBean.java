@@ -8,6 +8,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -20,37 +21,43 @@ public class ProductsManagerBean {
 
     //CRUD create-read-update-delete
 
-    public boolean create(ProductEntity productEntity){
-        if(!checkValid(productEntity)){
+    public boolean create(Product product){
+        if(!checkValid(product)){
             return false;
         }
 
         //Если уже есть в базе
-        ProductEntity existingProduct = entityManager.find(ProductEntity.class, productEntity.getId());
+        ProductEntity existingProduct = entityManager.find(ProductEntity.class, product.getId());
         if(existingProduct!=null){
             return false;
         }
 
-        entityManager.persist(productEntity);
+        existingProduct = new ProductEntity();
+        existingProduct.fromDto(product);
+        entityManager.persist(existingProduct);
         return true;
 
     }
 
-    public ProductEntity read(long id){
-        return entityManager.find(ProductEntity.class, id);
+    public Product read(long id){
+        ProductEntity entity = entityManager.find(ProductEntity.class, id);
+        if(entity==null){
+            return null;
+        }
+        return entity.toDto();
     }
 
-    public boolean update(ProductEntity productEntity){
-        if(!checkValid(productEntity)){
+    public boolean update(Product product){
+        if(!checkValid(product)){
             return false;
         }
 
-        ProductEntity existingProduct = entityManager.find(ProductEntity.class, productEntity.getId());
+        ProductEntity existingProduct = entityManager.find(ProductEntity.class, product.getId());
         if(existingProduct==null){
             return false;
         }
-
-        entityManager.merge(productEntity);
+        existingProduct.fromDto(product);
+        entityManager.merge(existingProduct);
         return true;
     }
 
@@ -69,7 +76,7 @@ public class ProductsManagerBean {
     //примет страница 1 : offset=0 limit=20
     //примет страница 2 : offset=20 limit=20
     //примет страница 3 : offset=40 limit=20
-    public List<ProductEntity> readList(int offset, int limit){
+    public List<Product> readList(int offset, int limit){
         if(offset<0||limit<1){
             return Collections.emptyList();
         }
@@ -79,12 +86,23 @@ public class ProductsManagerBean {
         query.setFirstResult(offset);
         query.setMaxResults(limit);
 
-        return query.getResultList();
+        List<ProductEntity> entityList = query.getResultList();
+        if(entityList==null||entityList.isEmpty()){
+            return Collections.emptyList();
+        }
+
+        List<Product> productsList = new ArrayList<Product>(entityList.size());
+        for(ProductEntity entity : entityList){
+            productsList.add(entity.toDto());
+        }
+
+        return productsList;
     }
 
-    private boolean checkValid(ProductEntity productEntity){
-        return productEntity != null &&
-                !StringUtils.isEmpty(productEntity.getName()) &&
-                productEntity.getPrice() > 0;
+    private boolean checkValid(Product product){
+
+        return product != null &&
+                !StringUtils.isEmpty(product.getName()) &&
+                product.getPrice() > 0;
     }
 }

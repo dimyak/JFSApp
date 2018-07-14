@@ -1,0 +1,14 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://java.sun.com/jsf/html">
+
+
+    <p:dialog id="delete_dialog" widgetVar="delete_dialog" header="Are you sure?">
+        <p:commandButton value="Delete" action="#{productsListBean.deleteProduct}"
+                         update="products_table"
+                         oncomplete="PF('delete_dialog').hide();"/>
+        <p:commandButton value="Cancel" onclick="PF('delete_dialog').hide();"/>
+    </p:dialog>
+
+
+</ui:composition>

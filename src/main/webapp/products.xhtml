@@ -14,14 +14,8 @@
     </ui:define>
 
     <ui:define name="page_body">
-        <h:form>
-
-            <p:dialog id="delete_dialog" widgetVar="delete_dialog">
-                <p:commandButton value="Delete" action="#{productsListBean.deleteProduct}"
-                                 update="products_table"
-                                 oncomplete="PF('delete_dialog').hide();"/>
-                <p:commandButton value="Cancel" onclick="PF('delete_dialog').hide();"/>
-            </p:dialog>
+    <h:form>
+        <ui:include src="WEB-INF/products/dialogs.xhtml"/>
 
         <p:panel >
 
@@ -48,8 +42,13 @@
                 <p:commandButton value="Delete" action="#{productsListBean.setIdForDelete(product.id)}" oncomplete="PF('delete_dialog').show();"/>
             </p:column>
 
+            <p:column>
+                <p:commandButton value="Edit" action="#{productsListBean.setEditingProduct(product)}" oncomplete="window.location = 'edit_product.xhtml'"/>
+            </p:column>
+
         </p:dataTable>
-        </h:form>
+
+    </h:form>
     </ui:define>
 
 </ui:composition>
