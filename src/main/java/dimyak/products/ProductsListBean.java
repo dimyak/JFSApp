@@ -37,4 +37,8 @@ public class ProductsListBean implements Serializable {
         productsManagerBean.create(entity);
         newProduct = new Product();
     }
+
+    public void deleteProduct(long id){
+        productsManagerBean.delete(id);
+    }
 }

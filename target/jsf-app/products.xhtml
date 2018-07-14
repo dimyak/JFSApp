@@ -25,7 +25,7 @@
 
             <p:commandButton value="Add" action="#{productsListBean.createNewProduct}" update="products_table"/>
         </p:panel>
-        </h:form>
+
         <p:dataTable value="#{productsListBean.products}" var="product" id="products_table">
 
             <p:column >
@@ -36,7 +36,12 @@
                 <h:outputText value="#{product.price}"/>
             </p:column>
 
+            <p:column>
+                <p:commandButton value="Delete" action="#{productsListBean.deleteProduct(product.id)}" update="products_table"/>
+            </p:column>
+
         </p:dataTable>
+        </h:form>
     </ui:define>
 
 </ui:composition>
